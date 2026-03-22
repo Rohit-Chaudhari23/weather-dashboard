@@ -47,7 +47,7 @@ const [error, setError] = useState(null);
     }
   });
 };
-  // ================= TEMP =================
+  // TEMP 
   const tempData =
     data?.daily?.time?.map((t, i) => ({
       date: t,
@@ -59,7 +59,7 @@ const [error, setError] = useState(null);
         2
     })) || [];
 
-  // ================= SUN =================
+  // SUN
   const sunData =
     data?.daily?.time?.map((t, i) => ({
       date: t,
@@ -67,7 +67,7 @@ const [error, setError] = useState(null);
       sunset: new Date(data.daily.sunset[i]).getHours()
     })) || [];
 
-  // ================= WIND =================
+  // wind
   const windData =
     data?.daily?.time?.map((t, i) => ({
       date: t,
@@ -75,7 +75,7 @@ const [error, setError] = useState(null);
       direction: data.daily.winddirection_10m_dominant[i]
     })) || [];
 
-  // ================= PM =================
+  // pm
  const pmData =
   data?.hourly?.time
     ?.map((t, i) => {

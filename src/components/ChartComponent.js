@@ -26,7 +26,6 @@ function ChartComponent({ data, dataKey }) {
             dot={false}
           />
 
-          {/* ✅ FIXED */}
           <Brush dataKey="time" height={30} travellerWidth={10} />
         </LineChart>
       </ResponsiveContainer>

@@ -15,7 +15,7 @@ import {
   Brush  
 } from "recharts";
 
-// ✅ AQI Logic
+//  AQI Logic
 const getAQI = (pm25) => {
   if (pm25 <= 50) return "Good";
   if (pm25 <= 100) return "Moderate";
@@ -55,7 +55,7 @@ function Home() {
   const daily = data.daily;
   const air = aqi.hourly;
 
-  // ✅ SAFE VALUES (FINAL FIX)
+  // SAFE VALUES (FINAL FIX)
   const windNow =
     current.windspeed_10m ??
     data.hourly.windspeed_10m?.[0] ??
@@ -66,7 +66,7 @@ function Home() {
       (v) => v !== null && v !== undefined
     ) ?? "--";
 
-  // ✅ FORMAT FUNCTION
+  //  FORMAT FUNCTION
   const format = (arr, key) =>
     data?.hourly?.time?.map((t, i) => ({
       time: t.slice(11, 16),
@@ -79,7 +79,7 @@ function Home() {
   const visibilityData = format(data.hourly.visibility, "visibility");
   const rainData = format(data.hourly.precipitation, "rain");
 
-  // ✅ PM COMBINED
+  // PM COMBINED
   const pmData =
     data?.hourly?.time?.map((t, i) => ({
       time: t.slice(11, 16),
@@ -89,7 +89,7 @@ function Home() {
 
   return (
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "auto" }}>
-      <h2>🌤 Weather Dashboard</h2>
+      <h2> Weather Dashboard</h2>
    <p className="subtitle">Live weather insights based on your location</p>
       {/* ================== CARDS ================== */}
       <div className="cards">
@@ -115,7 +115,7 @@ function Home() {
         <WeatherCard title="Wind" value={windNow + " km/h"} />
       </div>
 
-      {/* ================== GRAPHS ================== */}
+    
       <h3>Temperature</h3>
       <ChartComponent data={tempData} dataKey="temp" />
 
@@ -135,7 +135,7 @@ function Home() {
         <p>No Rain Today</p>
       )}
 
-      {/* ================== PM GRAPH ================== */}
+     
       <h3>Air Quality (PM10 & PM2.5)</h3>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={pmData}>
@@ -150,7 +150,7 @@ function Home() {
         </LineChart>
       </ResponsiveContainer>
 
-      {/* ================== BUTTON ================== */}
+ 
       <button className="btn" onClick={() => navigate("/history")}>
         View History
       </button>
