@@ -6,7 +6,8 @@ import {
   Tooltip,
   CartesianGrid,
   Brush,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Legend
 } from "recharts";
 
 function ChartComponent({ data, dataKey }) {
@@ -14,10 +15,10 @@ function ChartComponent({ data, dataKey }) {
 
   return (
     <div className="chartBox">
-      <ResponsiveContainer width="100%" height={320}>
+      <ResponsiveContainer width="100%" height={380}>
         <LineChart
           data={data}
-          margin={{ top: 10, right: 20, left: -10, bottom: 40 }}
+          margin={{ top: 10, right: 20, left: -10, bottom: 60 }} // 🔥 bottom space increase
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
 
@@ -39,6 +40,17 @@ function ChartComponent({ data, dataKey }) {
             stroke="#6366f1"
             strokeWidth={2}
             dot={false}
+          />
+
+          {/* 🔥 LEGEND FIX */}
+          <Legend
+            verticalAlign="bottom"
+            align="center"
+            height={36}
+            wrapperStyle={{
+              paddingTop: "15px",
+              fontSize: "12px"
+            }}
           />
 
           {!isMobile && (
