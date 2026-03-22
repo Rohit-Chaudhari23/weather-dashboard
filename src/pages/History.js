@@ -101,9 +101,9 @@ const [error, setError] = useState(null);
         <div className="history-filter">
           <input type="date" onChange={(e) => setStartDate(e.target.value)} />
           <input type="date" onChange={(e) => setEndDate(e.target.value)} />
-          <button className="btn" onClick={handleFetch}>
-            Fetch Data
-          </button>
+          <button className="btn fetch-btn" onClick={handleFetch}>
+              Fetch Data
+            </button>
         </div>
        
 
