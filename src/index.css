@@ -25,7 +25,8 @@ h2 {
 }
 
 h3 {
-  margin-top: 30px;
+  margin-top: 40px; 
+  margin-bottom: 10px;
 }
 
 /* ========= CARD GRID ========== */
@@ -114,7 +115,7 @@ h3 {
   background: #f8fafc;
   padding: 15px;
   border-radius: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   display: block;
 }
@@ -202,10 +203,14 @@ h3 {
 
 /* ===== MOBILE ===== */
 @media (max-width: 480px) {
-  h2 {
-    font-size: 20px;
+  .chartBox {
+    margin-bottom: 60px; 
   }
 
+  h3 {
+    margin-top: 30px;
+  }
+}
   .cards {
     grid-template-columns: 1fr;
   }
@@ -214,10 +219,10 @@ h3 {
     padding: 12px;
   }
 
-  .chartBox {
-    padding: 10px;
-  }
-
+.chartBox {
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
   .recharts-responsive-container {
     height: 250px !important;
   }
@@ -250,7 +255,7 @@ h3 {
   .nav-links {
     gap: 10px;
   }
-}
+
 
 .fetch-btn {
   margin-top: 0 !important;  
